@@ -13,9 +13,14 @@
       rel="stylesheet"
     />
   </head>
-  <body class="blue">
+  <body class="yellow">
     <div id="app">
       <header>
+        <nav>
+          <button onclick="changeColor()">
+            <img src="./assets/br-icon-local.png" alt="" />
+          </button>
+        </nav>
         <img src="./assets/worldcup.svg" alt="Logo da NLW Copa" />
       </header>
       <main id="cards"></main>
@@ -24,3 +29,16 @@
     <!-- <script src="./BD-games.js" type="module"></script> -->
   </body>
 </html>
+<script>
+  function changeColor() {
+    let bodyColor = document.querySelector("body")
+    let colorClass = bodyColor.classList.value
+    if (colorClass == "yellow") {
+      bodyColor.classList = "blue"
+    } else if (colorClass == "blue") {
+      bodyColor.classList = "green"
+    } else if (colorClass == "green") {
+      bodyColor.classList = "yellow"
+    }
+  }
+</script>
