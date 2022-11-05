@@ -18,7 +18,7 @@ Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologia
 <br>
 
 <p align="center">
-  <img alt="calendario da copa" src=".github/fifa-nlw.png" width="100%">
+  <img alt="calendario da copa" src="https://user-images.githubusercontent.com/59850893/200121302-fa6cdc88-4b98-41ad-b1c5-e320fdde1805.png" width="50%">
 </p>
 
 ## 🚀 Tecnologias
