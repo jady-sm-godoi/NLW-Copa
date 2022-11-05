@@ -1,15 +1,18 @@
+import { allGames } from "./BD-games.js"
+
 function createGame(player1, hour, player2) {
   return `
   <li>
-        <img src="./assets/icon-${player1}.svg" alt="bandeira de ${player1}" />
+        <img src="./assets/${player1}-bg.svg" alt="bandeira de ${player1}" style="width: 50px; height=50px"/>
         <strong>${hour}</strong>
         <img
-          src="./assets/icon-${player2}.svg"
-          alt="bandeira de ${player2}"
+          src="./assets/${player2}-bg.svg"
+          alt="bandeira de ${player2}" style="width: 50px; height=50px"
         />
       </li>
   `
 }
+
 let delay = -0.4
 function createCard(date, day, games) {
   delay += 0.4
@@ -22,13 +25,14 @@ function createCard(date, day, games) {
   </div>
   `
 }
-
-document.querySelector("#cards").innerHTML =
-  createCard(
-    "24/11",
-    "quinta",
-    createGame("brazil", "16:00", "serbia") +
-      createGame("brazil", "16:00", "serbia")
-  ) +
-  createCard("28/11", "segunda", createGame("brazil", "13:00", "switzerland")) +
-  createCard("02/12", "sexta", createGame("brazil", "16:00", "cameroon"))
+let liContent = ""
+let gameLine = ""
+allGames.forEach(({ day, date, game }) => {
+  gameLine = ""
+  game.forEach(({ player1, player2, hour }) => {
+    gameLine += createGame(player1, hour, player2)
+  })
+  liContent += createCard(day, date, gameLine)
+})
+document.querySelector("#cards").innerHTML = liContent
+console.log(liContent)
