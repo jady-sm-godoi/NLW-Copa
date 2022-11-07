@@ -25,20 +25,23 @@
       </header>
       <main id="cards"></main>
     </div>
-    <script src="./main.js" type="module"></script>
-    <!-- <script src="./BD-games.js" type="module"></script> -->
+    <script src="./main.js" type="module" defer></script>
   </body>
-</html>
-<script>
-  function changeColor() {
-    let bodyColor = document.querySelector("body")
-    let colorClass = bodyColor.classList.value
-    if (colorClass == "yellow") {
-      bodyColor.classList = "blue"
-    } else if (colorClass == "blue") {
-      bodyColor.classList = "green"
-    } else if (colorClass == "green") {
-      bodyColor.classList = "yellow"
+  <script>
+    function changeColor() {
+      let bodyColor = document.querySelector("body")
+      let colorClass = bodyColor.classList.value
+      switch (colorClass) {
+        case "yellow":
+          bodyColor.classList = "blue"
+          break
+        case "blue":
+          bodyColor.classList = "green"
+          break
+        case "green":
+          bodyColor.classList = "yellow"
+          break
+      }
     }
-  }
-</script>
+  </script>
+</html>

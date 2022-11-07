@@ -35,5 +35,3 @@ allGames.forEach(({ day, date, game }) => {
   liContent += createCard(day, date, gameLine)
 })
 document.querySelector("#cards").innerHTML = liContent
-
-
